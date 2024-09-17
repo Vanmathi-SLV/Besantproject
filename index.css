@@ -1,0 +1,115 @@
+/* Set the background image and general body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('./images/loginbg.png'); /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Home Button Styling */
+.home-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-button i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.home-button:hover {
+    background-color: #45a049;
+    text-decoration: none;
+}
+
+/* Form container styling */
+.form-container {
+    width: 400px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 50px; /* Adjust the left-side distance as needed */
+    top: 50px;  /* Adjust the top position as necessary */
+}
+
+/* Centering the heading */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Label styling */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #333;
+    text-align: left;
+}
+
+/* Styling input fields */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Styling the submit button */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ee3a3a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Submit button hover effect */
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Link styling */
+.form-container a {
+    display: block;
+    text-align: center;
+    color: #333;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    color: #4CAF50;
+}
+
+/* Additional hover effects for form elements */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
