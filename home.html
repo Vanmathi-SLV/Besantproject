@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Delivery Application - Home</title>
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <script defer src="home.js"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <img src="icon.jpg" alt="Gas Delivery Logo" height="30px" width="30px">
+        </div>
+        <nav>
+            <ul class="navbar">
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Home</a>
+                    <div class="dropdown-content">
+                        <a href="home.jsp">Overview</a><hr/>
+                        <a href="#latest-updates">Latest Updates</a><hr/>
+                        <a href="#reviews">Customer Reviews</a><hr/>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Services</a>
+                    <div class="dropdown-content">
+                        <a href="services.jsp">Gas Delivery</a>
+                        <a href="refill.jsp">Cylinder Refill</a>
+                        <a href="schedule.jsp">Scheduled Delivery</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="about.jsp">Our Story</a>
+                        <a href="mission.jsp">Our Mission</a>
+                        <a href="team.jsp">Meet the Team</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Contact</a>
+                    <div class="dropdown-content">
+                        <a href="contact.jsp">Contact Us</a>
+                        <a href="support.jsp">Support</a>
+                        <a href="faq.jsp">FAQs</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="popupMenu" class="popup-menu"></div>
+        <ul id="menuContent">
+            <!-- Menu items will be injected dynamically here -->
+        </ul>
+    </div>
+
+    <div class="gif-section"></div>
+        <img src="animated.gif" alt="Animated Gas Delivery GIF" class="center-gif">
+        <a href="#" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Reliable & Fast Gas Delivery</h1>
+            <p>Order gas from the comfort of your home with our speedy delivery service.</p>
+            <a href="#" class="order-btn">Order Now</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="service">
+                <i class="fas fa-truck"></i>
+                <h3>Gas Delivery</h3>
+                <p>We deliver gas cylinders to your doorstep quickly and efficiently.</p>
+            </div>
+            <div class="service">
+                <i class="fas fa-sync-alt"></i>
+                <h3>Refill Services</h3>
+                <p>Convenient gas refilling services available for all types of cylinders.</p>
+            </div>
+            <div class="service">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Scheduled Deliveries</h3>
+                <p>Set up scheduled deliveries so you never run out of gas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Gas Delivery Application. All rights reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
