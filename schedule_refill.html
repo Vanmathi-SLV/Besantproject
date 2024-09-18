@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule a Refill - Gas Delivery Application</title>
+    <link rel="stylesheet" href="schedule_refill.css">
+</head>
+<body>
+
+    <!-- Schedule Refill Section -->
+    <section class="schedule-refill">
+        <h1>Book Your Cylinder Refill Slot</h1>
+        <p>Select a convenient time slot for your cylinder refill, and we will ensure prompt service.</p>
+
+        <form id="refill-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="time-slot">Choose a Time Slot:</label>
+            <select id="time-slot" name="time-slot" required>
+                <option value="" disabled selected>Select a time slot</option>
+                <option value="8am-10am">8:00 AM - 10:00 AM</option>
+                <option value="10am-12pm">10:00 AM - 12:00 PM</option>
+                <option value="12pm-2pm">12:00 PM - 2:00 PM</option>
+                <option value="2pm-4pm">2:00 PM - 4:00 PM</option>
+                <option value="4pm-6pm">4:00 PM - 6:00 PM</option>
+            </select>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <p id="confirmation-message" style="display: none;">Your slot is booked.</p>
+    </section>
+
+    <script>
+        document.getElementById('refill-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('confirmation-message').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
