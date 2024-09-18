@@ -20,15 +20,15 @@
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Home</a>
                     <div class="dropdown-content">
-                        <a href="home.html">Overview</a><hr/>
-                        <a href="#latest-updates">Latest Updates</a><hr/>
-                        <a href="#reviews">Customer Reviews</a><hr/>
+                        <a href="home.html">Overview</a>
+                        <a href="#latest-updates">Latest Updates</a>
+                        <a href="#reviews">Customer Reviews</a>
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropbtn">Services</a>
+                    <a href="#services" class="dropbtn">Services</a>
                     <div class="dropdown-content">
-                        <a href="services.html">Gas Delivery</a>
+                        <a href="./gasdelivery.html">Gas Delivery</a>
                         <a href="refill.html">Cylinder Refill</a>
                         <a href="schedule.html">Scheduled Delivery</a>
                     </div>
@@ -88,6 +88,15 @@
         <!-- Add more updates as needed -->
     </div>
 </section>
+  
+   <section id="reviews" class="reviews">
+            <h2>Customer Reviews</h2>
+            <ul id="review-list">
+                <li>"Amazing service! I received my gas cylinder in just 30 minutes." - Jane D.</li>
+                <li>"The scheduled delivery feature is a lifesaver. No more running out of gas." - Mike H.</li>
+            </ul>
+            <a href="review.html" class="order-btn1">Your Review</a>
+    </section>
 
 
     <!-- Services Section -->
@@ -123,6 +132,18 @@
             </div>
         </div>
     </footer>
-
+    <script>
+        // To dynamically display the reviews from the form
+        document.addEventListener('DOMContentLoaded', () => {
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+            const reviewList = document.getElementById('review-list');
+            
+            reviews.forEach(review => {
+                const li = document.createElement('li');
+                li.textContent = `"${review.text}" - ${review.name}`;
+                reviewList.appendChild(li);
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,122 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #ff6600;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.logo img {
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+}
+
+.navbar {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+/* Review Form Section */
+.review-form {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.review-form h1 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.review-form form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+}
+
+.review-form label {
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.review-form input, 
+.review-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+.review-form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.review-form button {
+    background-color: #ff6600;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.review-form button:hover {
+    background-color: #ff4500;
+}
+
+/* Back to Home Button */
+.back-btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background-color: #ccc;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

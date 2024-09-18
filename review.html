@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Review - Gas Delivery Application</title>
+    <link rel="stylesheet" type="text/css" href="review.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="path/to/logo.png" alt="Gas Delivery Logo" height="30px" width="30px">
+        </div>
+        <nav>
+            <ul class="navbar">
+                <li><a href="home.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Review Form Section -->
+    <section class="review-form">
+        <h1>Submit Your Review</h1>
+        <form id="reviewForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="review">Your Review:</label>
+            <textarea id="review" name="review" required></textarea>
+
+            <button type="submit">Submit Review</button>
+        </form>
+        <button class="back-btn" onclick="window.location.href='home.html'">Back to Home</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Gas Delivery Application. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript to Handle Review Submission -->
+    <script>
+        document.getElementById('reviewForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const review = document.getElementById('review').value;
+
+            // Get existing reviews from localStorage, or initialize an empty array
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+            
+            // Add new review
+            reviews.push({ name, text: review });
+            
+            // Save updated reviews back to localStorage
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+            
+            // Redirect back to home page
+            window.location.href = 'home.html';
+        });
+    </script>
+</body>
+</html>
