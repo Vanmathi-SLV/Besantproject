@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now</title>
+    <link rel="stylesheet" href="order.css">
+    <script defer src="order.js"></script>
+</head>
+<body>
+    <!-- Order Section -->
+    <div class="order-section">
+        <h1>Place the Order Now</h1>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username">
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="Enter your address">
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number">
+
+            <label for="otp">OTP:</label>
+            <input type="text" id="otp" placeholder="Generate OTP" disabled>
+
+            <button type="button" onclick="generateOTP()">Generate OTP</button>
+            <button type="button" onclick="buyNow()">Buy Now</button>
+        </form>
+    </div>
+
+    <!-- Delivery Status Tracker -->
+    <div id="status-tracker" class="hidden">
+        <h2>Delivery Status</h2>
+        <div class="status-container">
+            <div class="status-bar">
+                <div class="step" id="step1">
+                    <div class="bullet">1</div>
+                    <div class="status-label">Ordered</div>
+                </div>
+                <div class="step" id="step2">
+                    <div class="bullet">2</div>
+                    <div class="status-label">Packed</div>
+                </div>
+                <div class="step" id="step3">
+                    <div class="bullet">3</div>
+                    <div class="status-label">Shipped</div>
+                </div>
+                <div class="step" id="step4">
+                    <div class="bullet">4</div>
+                    <div class="status-label">Delivered</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
