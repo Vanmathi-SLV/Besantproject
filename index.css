@@ -40,7 +40,7 @@ body {
     text-decoration: none;
 }
 
-/* Form container styling */
+/* Center the form container in the viewport */
 .form-container {
     width: 400px;
     text-align: center;
@@ -49,9 +49,13 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     position: absolute;
-    left: 50px; /* Adjust the left-side distance as needed */
-    top: 50px;  /* Adjust the top position as necessary */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+/* Keep the rest of your CSS as is */
+
 
 /* Centering the heading */
 h2 {

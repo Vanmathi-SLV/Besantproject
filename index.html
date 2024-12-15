@@ -11,28 +11,28 @@
     <a href="./home.html" class="home-button">
         <i class="fas fa-home"></i> Home
     </a>
-<div class="form-container">
-    <h2>User Registration</h2>
-    <form action="#" method="get">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required>
+    <div class="form-container">
+        <h2>User Registration</h2>
+        <form id="registration-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="phone">Phone Number:</label>
-        <input type="text" id="phone" name="phone" required>
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
 
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
 
-        <a href="./home.html"><input type="submit" value="Register"></a>
-    </form>
-    <a href="login.html">Already have an account? Login</a>
-</div>
-
+            <input type="submit" value="Register">
+        </form>
+        <a id="login-link" href="./login.html">Already have an account? Login</a>
+    </div>
+    <script src="./script.js"></script>
 </body>
 </html>

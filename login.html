@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./images/icon.jpg" type="image/png">
+</head>
+<style>
+    /* Body Background */
+body {
+    background-image: url('./images/loginbg.png'); /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+/* Home Button */
+.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.btn-primary i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Card Styling */
+.card {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Labels and Inputs */
+label {
+    color: #333;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Link Styling */
+.text-decoration-none:hover {
+    text-decoration: underline;
+}
+
+</style>
+<body class="bg-light d-flex justify-content-center align-items-center vh-100">
+    <!-- Home Button -->
+    <a href="./home.html" class="btn btn-primary position-absolute top-0 end-0 m-3">
+        <i class="fas fa-home"></i> Home
+    </a>
+
+    <!-- Login Form -->
+    <div class="card p-4 shadow-lg" style="width: 24rem;">
+        <h2 class="text-center mb-4">Login</h2>
+        <form id="login-form">
+            <div class="mb-3">
+                <label for="login-username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="login-username" placeholder="Enter your username" required>
+            </div>
+            <div class="mb-3">
+                <label for="login-password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="login-password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-danger w-100">Login</button>
+        </form>
+        <div class="text-center mt-3">
+            <a href="./register.html" class="text-decoration-none">Don’t have an account? Register</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    // Pre-fill username if redirected from registration
+    if (sessionStorage.getItem("redirectedFromRegistration") === "true") {
+        const savedUsername = sessionStorage.getItem("username");
+        if (savedUsername) {
+            document.getElementById("login-username").value = savedUsername;
+        }
+        sessionStorage.removeItem("redirectedFromRegistration");
+    }
+
+    // Handle form submission
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Example: Add your login validation logic here
+        const username = document.getElementById("login-username").value;
+        const password = document.getElementById("login-password").value;
+
+        if (username && password) {
+            alert(`Welcome, ${username}!`);
+            // Redirect to the dashboard or home page
+            window.location.href = "./home.html";
+        } else {
+            alert("Invalid credentials. Please try again.");
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
