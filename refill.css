@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
@@ -7,7 +7,7 @@ body {
     color: #333;
 }
 
-/* Cylinder Refill Information Section */
+
 .cylinder-refill-info {
     padding: 40px;
     background-color: #fff;
@@ -66,7 +66,7 @@ body {
     background-color: #ff4500;
 }
 
-/* Refill Image Section */
+
 .refill-image {
     text-align: center;
     padding: 30px 0;

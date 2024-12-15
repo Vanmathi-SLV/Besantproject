@@ -1,7 +1,7 @@
-/* Set the background image and general body styling */
+
 body {
     font-family: Arial, sans-serif;
-    background-image: url('./images/loginbg.png'); /* Replace with your actual image path */
+    background-image: url('./images/loginbg.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -13,7 +13,7 @@ body {
     height: 100vh;
 }
 
-/* Home Button Styling */
+
 .home-button {
     position: absolute;
     top: 20px;
@@ -40,12 +40,12 @@ body {
     text-decoration: none;
 }
 
-/* Center the form container in the viewport */
+
 .form-container {
     width: 400px;
     text-align: center;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    background-color: rgba(255, 255, 255, 0.8); 
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     position: absolute;
@@ -54,16 +54,12 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* Keep the rest of your CSS as is */
-
-
-/* Centering the heading */
 h2 {
     text-align: center;
     color: #333;
 }
 
-/* Label styling */
+
 label {
     display: block;
     margin: 10px 0 5px;
@@ -71,7 +67,7 @@ label {
     text-align: left;
 }
 
-/* Styling input fields */
+
 input[type="text"], input[type="email"], input[type="password"] {
     width: 100%;
     padding: 10px;
@@ -82,7 +78,7 @@ input[type="text"], input[type="email"], input[type="password"] {
     font-size: 16px;
 }
 
-/* Styling the submit button */
+
 input[type="submit"] {
     width: 100%;
     padding: 10px;
@@ -94,12 +90,11 @@ input[type="submit"] {
     font-size: 16px;
 }
 
-/* Submit button hover effect */
 input[type="submit"]:hover {
     background-color: #45a049;
 }
 
-/* Link styling */
+
 .form-container a {
     display: block;
     text-align: center;
@@ -112,7 +107,7 @@ input[type="submit"]:hover {
     color: #4CAF50;
 }
 
-/* Additional hover effects for form elements */
+
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
     border-color: #4CAF50;
     outline: none;
