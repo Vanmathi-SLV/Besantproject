@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gas Delivery Application - Home</title>
     <link rel="stylesheet" type="text/css" href="./home.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
     <script defer src="./home.js"></script>
 </head>
 <body>
@@ -12,7 +13,6 @@
     <header>
         <div class="logo">
             <img src="./images/gasicon.jpg" alt="Gas Delivery Logo" height="30px" width="30px">
-        </div>
         </div>
         <nav>
             <ul class="navbar">
@@ -29,10 +29,10 @@
                     <div class="dropdown-content">
                         <a href="./gasdelivery.html">Gas Delivery</a>
                         <a href="refill.html">Cylinder Refill</a>
-                        <a href="schedule.html">Scheduled Delivery</a>
+                        <a href="./schedule_refill.html">Scheduled Delivery</a>
                     </div>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown"> 
                     <a href="#" class="dropbtn">About Us</a>
                     <div class="dropdown-content">
                         <a href="about.html">Our Story</a>
@@ -41,9 +41,9 @@
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropbtn">Contact</a>
+                    <a href="#contact-us" class="dropbtn">Contact</a>
                     <div class="dropdown-content">
-                        <a href="contact.html">Contact Us</a>
+                        <a href="#contact-us">Contact Us</a>
                         <a href="support.html">Support</a>
                         <a href="faq.html">FAQs</a>
                     </div>
@@ -53,9 +53,7 @@
     </header>
 
     <div id="popupMenu" class="popup-menu"></div>
-        <ul id="menuContent">
-           
-        </ul>
+        <ul id="menuContent"></ul>
     </div>
    
     <section class="hero">
@@ -66,34 +64,33 @@
         </div>
     </section>
 
-   
-<section id="latest-updates" class="latest-updates">
-    <h2>Latest Updates</h2>
-    <div class="updates-content">
-        <article class="update">
-            <h3>New Feature: Scheduled Deliveries</h3>
-            <p>We are excited to announce the launch of our scheduled delivery service. Now you can set up regular gas deliveries at times convenient for you.</p>
-        </article>
-        <article class="update">
-            <h3>Service Expansion</h3>
-            <p>We've expanded our service area! Gas delivery is now available in the following new regions...</p>
-        </article>
-        
-    </div>
-</section>
-  
-   <section id="reviews" class="reviews">
-            <h2>Customer Reviews</h2>
-            <ul id="review-list">
-                <li>"Amazing service! I received my gas cylinder in just 30 minutes." - Jane D.</li>
-                <li>"The scheduled delivery feature is a lifesaver. No more running out of gas." - Mike H.</li>
-            </ul>
-            <a href="review.html" class="order-btn1">Your Review</a>
+    <!-- Latest Updates -->
+    <section id="latest-updates" class="latest-updates">
+        <h2>Latest Updates</h2>
+        <div class="updates-content">
+            <article class="update">
+                <h3>New Feature: Scheduled Deliveries</h3>
+                <p>We are excited to announce the launch of our scheduled delivery service. Now you can set up regular gas deliveries at times convenient for you.</p>
+            </article>
+            <article class="update">
+                <h3>Service Expansion</h3>
+                <p>We've expanded our service area! Gas delivery is now available in the following new regions...</p>
+            </article>
+        </div>
     </section>
 
+    <!-- Reviews -->
+    <section id="reviews" class="reviews">
+        <h2>Customer Reviews</h2>
+        <ul id="review-list">
+            <li>"Amazing service! I received my gas cylinder in just 30 minutes." - Jane D.</li>
+            <li>"The scheduled delivery feature is a lifesaver. No more running out of gas." - Mike H.</li>
+        </ul>
+        <a href="review.html" class="order-btn1">Your Review</a>
+    </section>
 
-    
-    <section class="services">
+    <!-- Services -->
+    <section id="services" class="services">
         <h2>Our Services</h2>
         <div class="service-cards">
             <div class="service">
@@ -114,10 +111,36 @@
         </div>
     </section>
 
-   
+    <section id="contact-us" class="contact-us">
+        <div class="container">
+            <h2 class="text-center">Contact Us</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Email</h5>
+                            <p class="card-text">support@gasdeliveryapp.com</p>
+                            <a href="mailto:support@gasdeliveryapp.com" class="btn">Send Email</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Mobile</h5>
+                            <p class="card-text">+1-234-567-890</p>
+                            <a href="tel:+1234567890" class="btn">Call Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Gas Delivery Application. All rights reserved.</p>
+            <p>&copy; Gas Delivery Application All rights reserved.</p>
             <div class="socials">
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -125,8 +148,8 @@
             </div>
         </div>
     </footer>
+
     <script>
-        
         document.addEventListener('DOMContentLoaded', () => {
             const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
             const reviewList = document.getElementById('review-list');
