@@ -32,3 +32,42 @@ function toggleMenu(section) {
    
     popupMenu.style.display = popupMenu.style.display === 'none' ? 'block' : 'none';
 }
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const userSection = document.createElement("div");
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (loggedInUser) {
+        userSection.innerHTML = `
+            <p>Welcome, ${loggedInUser.name} (${loggedInUser.username})</p>
+            <button id="logout-button">Logout</button>
+        `;
+    } else {
+        userSection.innerHTML = `<p>You are not logged in.!
+        <a href="./login.html" style="font-size:bold; text-decoration:none; color:white;">Login here</a></p>`;
+    }
+
+    document.querySelector("header").appendChild(userSection);
+
+    if (loggedInUser) {
+        document.getElementById("logout-button").addEventListener("click", () => {
+            localStorage.removeItem("loggedInUser");
+            location.reload();
+        });
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (!loggedInUser) {
+        document.querySelector(".order-btn1").addEventListener("click", (e) => {
+            e.preventDefault();
+            alert("You must be logged in to submit a review.");
+        });
+    }
+});
+

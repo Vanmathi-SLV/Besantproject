@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Your Order History</h1>
+
+        <!-- Order History Table -->
+        <div class="card p-4 shadow">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Gas Type</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="order-history">
+                        <!-- Order data will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a href="profile.html" class="btn btn-secondary mt-4">Back to Profile</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const orderHistoryContainer = document.getElementById("order-history");
+
+            try {
+                const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+                if (!loggedInUser) {
+                    alert("No user is logged in. Please log in to view this page.");
+                    window.location.href = "./login.html";
+                    return;
+                }
+
+                // Retrieve the order history from localStorage
+                let orderHistory = JSON.parse(localStorage.getItem("orderHistory")) || [];
+
+                // Display the order history
+                if (orderHistory.length > 0) {
+                    orderHistory.forEach(order => {
+                        orderHistoryContainer.innerHTML += `
+                            <tr id="order-${order.id}">
+                                <td>${order.id}</td>
+                                <td>${order.gasType}</td>
+                                <td>${order.status || 'Pending'}</td>
+                            </tr>
+                        `;
+                    });
+                } else {
+                    orderHistoryContainer.innerHTML = `
+                        <tr>
+                            <td colspan="3" class="text-center">No orders found.</td>
+                        </tr>
+                    `;
+                }
+
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Failed to load order history. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -8,28 +8,39 @@
     <script defer src="order.js"></script>
 </head>
 <body>
-  
     <div class="order-section">
         <h1>Place the Order Now</h1>
-        <form>
-            <label for="username">Username:</label>
-            <input type="text" id="username" placeholder="Enter your username">
+        
+        <!-- Displaying logged-in user details -->
+        <div id="user-details">
+            <p><strong>Username:</strong> <span id="user-username"></span></p>
+            <p><strong>Address:</strong> <span id="user-address"></span></p>
+            <p><strong>Phone:</strong> <span id="user-phone"></span></p>
+        </div>
+
+        <form id="order-form">
+            <label for="gas">Select Gas Type:</label>
+            <select id="gas">
+                <option value="">Select Gas Type</option>
+                <option value="indane">Indane</option>
+                <option value="hp">HP</option>
+                <option value="bharat">Bharat Gas</option>
+            </select>
 
             <label for="address">Address:</label>
-            <input type="text" id="address" placeholder="Enter your address">
+            <input type="text" id="address" placeholder="Enter your address" required>
 
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" placeholder="Enter your phone number">
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
 
             <label for="otp">OTP:</label>
             <input type="text" id="otp" placeholder="Generate OTP" disabled>
 
             <button type="button" onclick="generateOTP()">Generate OTP</button>
-            <button type="button" onclick="buyNow()">Buy Now</button>
+            <button type="submit">Buy Now</button>
         </form>
     </div>
 
-   
     <div id="status-tracker" class="hidden">
         <h2>Delivery Status</h2>
         <div class="status-container">
@@ -53,5 +64,79 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Fetch logged-in user details
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+        if (loggedInUser) {
+            document.getElementById("user-username").textContent = loggedInUser.username;
+            document.getElementById("user-address").textContent = loggedInUser.address;
+            document.getElementById("user-phone").textContent = loggedInUser.phone;
+        }
+
+        // Fetch available gas types
+        fetch("https://retoolapi.dev/Baqk59/gas")  // Replace with your correct API URL for gas types
+            .then(response => response.json())
+            .then(data => {
+                const gasDropdown = document.getElementById("gas");
+                data.forEach(gas => {
+                    const option = document.createElement("option");
+                    option.value = gas.id;  // Assuming the API returns gas type IDs
+                    option.textContent = gas.name;  // Assuming the API returns gas names
+                    gasDropdown.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching gas details:", error);
+            });
+
+        // Generate OTP function
+        function generateOTP() {
+            const otp = Math.floor(100000 + Math.random() * 900000); // Generate a 6-digit OTP
+            document.getElementById("otp").value = otp;
+        }
+
+        // Handle order form submission
+        document.getElementById("order-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            
+            const gasType = document.getElementById("gas").value;
+            const address = document.getElementById("address").value;
+            const phone = document.getElementById("phone").value;
+            const otp = document.getElementById("otp").value;
+
+            if (gasType && address && phone && otp) {
+                // Send the order details to the API
+                const orderData = {
+                    username: loggedInUser.username,
+                    gasType: gasType,
+                    address: address,
+                    phone: phone,
+                    otp: otp
+                };
+
+                fetch("https://retoolapi.dev/ge9oTT/ordergas", {  // Your API to store order
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(orderData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Order placed successfully:", data);
+                    alert("Order placed successfully! Your status will be updated soon.");
+                    // Redirect to a new page or display status
+                })
+                .catch(error => {
+                    console.error("Error placing order:", error);
+                    alert("Failed to place the order. Please try again.");
+                });
+            } else {
+                alert("Please fill in all the fields.");
+            }
+        });
+    </script>
 </body>
 </html>

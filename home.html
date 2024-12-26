@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gas Delivery Application - Home</title>
     <link rel="stylesheet" type="text/css" href="./home.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
     <script defer src="./home.js"></script>
 </head>
 <body>
 
     <header>
         <div class="logo">
-            <img src="./images/gasicon.jpg" alt="Gas Delivery Logo" height="30px" width="30px">
+            <img src="./images/icon - Copy.jpg" alt="Gas Delivery Logo" height="50px" width="30px">
         </div>
         <nav>
             <ul class="navbar">
+                <li class="dropdown">
+                    <a href="profile.html" class="dropbtn">My Profile</a>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Home</a>
                     <div class="dropdown-content">
@@ -53,7 +55,7 @@
     </header>
 
     <div id="popupMenu" class="popup-menu"></div>
-        <ul id="menuContent"></ul>
+    <ul id="menuContent"></ul>
     </div>
    
     <section class="hero">
@@ -83,8 +85,8 @@
     <section id="reviews" class="reviews">
         <h2>Customer Reviews</h2>
         <ul id="review-list">
-            <li>"Amazing service! I received my gas cylinder in just 30 minutes." - Jane D.</li>
-            <li>"The scheduled delivery feature is a lifesaver. No more running out of gas." - Mike H.</li>
+            <li>"Amazing service! I received my gas cylinder in just 30 minutes." -KING.</li>
+            <li>"The scheduled delivery feature is a lifesaver. No more running out of gas." -Queen</li>
         </ul>
         <a href="review.html" class="order-btn1">Your Review</a>
     </section>
@@ -136,7 +138,6 @@
             </div>
         </div>
     </section>
-    
 
     <footer>
         <div class="footer-content">
@@ -151,14 +152,18 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
-            const reviewList = document.getElementById('review-list');
-            
-            reviews.forEach(review => {
-                const li = document.createElement('li');
-                li.textContent = `"${review.text}" - ${review.name}`;
-                reviewList.appendChild(li);
-            });
+            // Check if the order status update exists in localStorage
+            const orderStatusUpdate = JSON.parse(localStorage.getItem('orderStatusUpdate'));
+            if (orderStatusUpdate) {
+                // Display the modal with the status update message
+                const statusMessage = `Your order (ID: ${orderStatusUpdate.orderId}) has been ${orderStatusUpdate.status}.`;
+
+                // Display popup
+                alert(statusMessage);
+
+                // Clear the stored order status update from localStorage
+                localStorage.removeItem('orderStatusUpdate');
+            }
         });
     </script>
 </body>

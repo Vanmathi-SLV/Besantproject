@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deactivate Account</title>
+    <link rel="stylesheet" href="./profile.css">
+    <script defer src="./deactivate.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Deactivate Account</h2>
+        <form id="deactivate-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" readonly>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" readonly>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" readonly>
+
+            <label for="reason">Reason for Deactivation:</label>
+            <select id="reason" name="reason" required>
+                <option value="" disabled selected>Select a reason</option>
+                <option value="no-longer-needed">No longer needed</option>
+                <option value="privacy-concerns">Privacy concerns</option>
+                <option value="service-issues">Issues with service</option>
+                <option value="other">Other</option>
+            </select>
+
+            <button type="submit" id="deactivate-account-btn" class="deactivate-btn">Deactivate Account</button>
+        </form>
+    </div>
+</body>
+</html>
